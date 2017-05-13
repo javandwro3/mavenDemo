@@ -3,11 +3,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.jwrabel.trainings.mavenDemo</groupId>
-    <artifactId>mavenDemo</artifactId>
+    <artifactId>mavenDemo-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
-    <name>mavenDemo</name>
+    <packaging>pom</packaging>
+
+    <name>Maven Demo parent</name>
+    <modules>
+        <module>mavenDemogui</module>
+        <module>mavenDemocore</module>
+    </modules>
+
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -36,30 +42,6 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-
-                <artifactId>maven-assembly-plugin</artifactId>
-
-                <executions>
-                    <execution>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>assembly</goal>
-                        </goals>
-                    </execution>
-                </executions>
-
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>pl.jwrabel.trainings.mavenDemo.SimpleWindow</mainClass>
-                        </manifest>
-                    </archive>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
                 </configuration>
             </plugin>
         </plugins>
